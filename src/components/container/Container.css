@@ -1,0 +1,12 @@
+.container {
+    max-width: 1220px;
+    width: 85%;
+    margin: auto;
+    padding-inline: var(--fourth-padding);
+}
+
+@media screen and (max-width: 75em) {
+    .container {
+        width: 100%;
+    }
+}

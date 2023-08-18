@@ -1,0 +1,131 @@
+.hero {
+    width: 100%;
+    min-height: calc(90vh - var(--header-height));
+    padding-block: 0;
+}
+
+@media screen and (max-width: 30em) {
+    .hero {
+        min-height: calc(80vh - var(--header-height));
+    }
+}
+
+.hero .container {
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--neutral-gap);
+    padding-block: var(--third-padding);
+}
+
+/* slider  */
+.hero .container .slider {
+    width: 100%;
+    height: auto;
+    border: none;
+    border-radius: var(--primary-border-radius);
+}
+
+.hero .container .slider .img-container {
+    width: inherit;
+    aspect-ratio: 4/2.5;
+    background-color: var(--darkest-color);
+    position: relative;
+    border-radius: inherit;
+    overflow: hidden;
+}
+
+.hero .container .slider .img-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--shadow-color);
+}
+
+@media screen and (min-width: 30em) {
+    .hero .container .slider .img-container {
+        aspect-ratio: 0;
+        width: 100%;
+        height: 400px;
+    }
+}
+
+.hero .container .slider .img-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero .container .slider .img-container .right,
+.hero .container .slider .img-container .left {
+    width: 40px;
+    height: 40px;
+    background-color: var(--lightest-color);
+    border: none;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 20px);
+    font-size: var(--fs-arrows);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 23em) {
+    .hero .container .slider .img-container .right,
+    .hero .container .slider .img-container .left {
+        width: 30px;
+        height: 30px;
+        top: calc(50% - 15px);
+    }
+}
+
+.hero .container .slider .img-container .right{
+    right: var(--fourth-distance);
+}
+
+.hero .container .slider .img-container .left{
+    left: var(--fourth-distance);
+    
+}
+
+.hero .container .slider .img-container .stop {
+    cursor: not-allowed;
+}
+
+/* content  */
+.hero .container .content p {
+    max-width: 700px;
+    font-size: var(--fs-paragraphs);
+    font-weight: var(--fw-regular);
+    color: var(--darkest-color);
+    margin-block: var(--fourth-margin) var(--neutral-margin);
+}
+
+.hero .container .content p {
+    text-align: center;
+}
+
+@media screen and (max-width: 23em) {
+    .hero .container .content p {
+        margin-block: var(--fourth-margin) var(--third-margin);
+    }
+}
+
+.hero .container .content .buttons-container {
+    display: flex;
+    align-items: center;
+    gap: var(--fourth-gap);
+}
+
+.hero .container .content .buttons-container {
+    justify-content: center;
+}

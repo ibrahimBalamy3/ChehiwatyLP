@@ -1,0 +1,115 @@
+.reservations {
+    width: 100%;
+    height: auto;
+}
+
+
+.reservations h2 {
+    margin-block-end: var(--neutral-margin);
+    position: relative;
+}
+
+.reservations form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--third-gap);
+    padding: var(--third-gap);
+    border: 3px solid var(--primary-color);
+    border-radius: var(--primary-border-radius);
+}
+
+@media screen and (max-width: 23em) {
+    .reservations form {
+        gap: var(--fourth-gap);
+        padding: var(--fourth-padding);
+    }
+}
+
+.reservations form div {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: var(--third-gap);
+}
+
+@media screen and (max-width: 48em) {
+    .reservations form div {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 23em) {
+    .reservations form div  {
+        gap: var(--fourth-gap);
+    }
+}
+
+.reservations form div:first-child .child {
+    width: calc(100% / 3);
+    height: 50px;
+}
+
+@media screen and (max-width: 48em) {
+    .reservations form div:first-child .child {
+        width: 100% ;
+    }
+}
+
+.reservations form div:nth-child(2) .child {
+    width: calc(100% / 2);
+    height: 50px;
+}
+
+@media screen and (max-width: 48em) {
+    .reservations form div:nth-child(2) .child {
+        width: 100% ;
+    }
+}
+
+.reservations .child {
+    border: 2px solid var(--darkest-color);
+    border-radius: var(--primary-border-radius);
+    padding-inline: var(--fourth-padding);
+    font-family: var(--neutral-ff);
+    font-size: var(--fs-form);
+    font-weight: var(--fw-regular);
+    color: var(--darkest-color);
+}
+
+.reservations .child::placeholder {
+    font-family: var(--neutral-ff);
+    font-size: var(--fs-form);
+    font-weight: var(--fw-regular);
+    color: var(--darkest-color);
+    text-transform: capitalize;
+}
+
+.reservations button {
+    width: 100%;
+    height: var(--neutral-distance);
+    border: none;
+    border-radius: var(--primary-border-radius);
+    background-color: var(--primary-color);
+    font-family: var(--neutral-ff);
+    font-size: var(--fs-form);
+    font-weight: var(--fw-semi-bold);
+    color: var(--lightest-color);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--primary-transition);
+}
+
+.reservations button:hover,
+.reservations button:active {
+    background-color: var(--lighets-color);
+    color: var(--primary-color);
+    box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.reservations select {
+    text-transform: capitalize;
+}

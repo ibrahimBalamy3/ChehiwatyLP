@@ -1,0 +1,90 @@
+.contact {
+    width: 100%;
+    height: auto;
+    padding-block-end: var(--neutral-padding);
+} 
+
+.contact h2 {
+    margin-bottom: var(--neutral-margin);
+}
+
+.contact form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--third-gap);
+    padding: var(--third-gap);
+    border: 3px solid var(--primary-color);
+    border-radius: var(--primary-border-radius);
+}
+
+@media screen and (max-width: 23em) {
+    .contact form {
+        gap: var(--fourth-gap);
+        padding: var(--fourth-padding);
+    }
+}
+
+.contact form .inputs {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--third-gap);
+}
+
+@media screen and (max-width: 48em) {
+    .contact form .inputs {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 23em) {
+    .contact form .inputs  {
+        gap: var(--fourth-gap);
+    }
+}
+
+.contact form .inputs input,
+.contact form textarea {
+    width: calc(100% / 2);
+    height: 50px;
+    border: 2px solid var(--darkest-color);
+    border-radius: var(--primary-border-radius);
+    padding-inline: var(--fourth-padding);
+    font-family: var(--neutral-ff);
+    font-size: var(--fs-form);
+    font-weight: var(--fw-regular);
+    color: var(--darkest-color);
+}
+
+
+.contact form .inputs input::placeholder,
+.contact form textarea::placeholder {
+    font-family: var(--neutral-ff);
+    font-size: var(--fs-form);
+    font-weight: var(--fw-regular);
+    color: var(--darkest-color);
+    text-transform: capitalize;
+}
+
+@media screen and (max-width: 48em) {
+    .contact form .inputs input,
+    .contact form textarea {
+        width: 100% ;
+    }
+}
+
+.contact form textarea {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 200px;
+    padding-block-start: var(--fourth-padding);
+}
+
+.contact form button {
+    width: 100%;
+}

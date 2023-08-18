@@ -1,0 +1,109 @@
+.menu {
+    width: 100%;
+    height: auto;
+}
+
+.menu .container p {
+    max-width: 700px;
+    font-size: var(--fs-paragraphs);
+    font-weight: var(--fw-regular);
+    color: var(--darkest-color);
+    text-align: center;
+    margin-inline: auto;
+    margin-block: var(--third-margin) var(--neutral-margin);
+}
+
+.menu .container .indication {
+    max-width: fit-content;
+    font-size: var(--fs-paragraphs);
+    font-weight: var(--fw-semi-bold);
+    color: var(--primary-color);
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation-name: indication;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.menu .container .indication .left-arrow-icon {
+    font-size: 1.5rem;
+}
+
+@keyframes indication {
+    0% {
+        transform: translateX(0px);
+    }35% {
+        transform: translateX(30px);
+        
+    }50% {
+        transform: translateX(0px);
+        
+    } 65% {
+        transform: translateX(30px);
+        
+    } 100% {
+        transform: translateX(0px);
+    }
+    
+}
+
+.menu .navigation {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--neutral-gap);
+    margin-block-end: var(--neutral-margin);
+}
+
+@media screen and (max-width: 48em) {
+    .menu .navigation {
+        gap: var(--third-gap);
+    }
+}
+
+@media screen and (max-width: 30em) {
+    .menu .navigation {
+        gap: 0;
+        justify-content: space-between;
+    }
+}
+
+
+.menu .navigation li .link {
+    font-size: var(--menu-navigation);
+    font-weight: var(--fw-semi-bold);
+    color: var(--darkest-color);
+    text-transform: capitalize;
+    opacity: 0.5;
+    transition: var(--primary-transition);
+}
+
+.menu .navigation li .link:hover {
+    color: var(--primary-color);
+    opacity: 1;
+    
+}
+ 
+.menu .navigation li .link:focus {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+.menu .content {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: var(--neutral-gap);
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-bottom: var(--neutral-margin);
+}
+
+.menu .content::-webkit-scrollbar {
+    display: none;
+}
