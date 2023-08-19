@@ -1,13 +1,13 @@
-import { useState } from "react"
+import { useRef, useState } from "react"
 import Container from "../../components/container/Container"
 import List from "../../components/list/List";
 import "./Header.css"
 
 export const Header = () => {
     const [isActive, setIsActive] = useState(false);
-    const listTitles = ["home", "menu", "about us", "reservations", "contact us"]
+    const listTitles = useRef(["home", "menu", "about us", "reservations", "contact us"])
 
-    const listItems = listTitles.map((listTitle, index) => <List key={index} title={listTitle} />)
+    const listItems = listTitles.current.map((listTitle, index) => <List key={index} title={listTitle} />)
 
     const handleClick= ()=> setIsActive(prevState => !prevState);
     

@@ -1,0 +1,27 @@
+.hero .container .content p {
+    max-width: 700px;
+    font-size: var(--fs-paragraphs);
+    font-weight: var(--fw-regular);
+    color: var(--darkest-color);
+    margin-block: var(--fourth-margin) var(--neutral-margin);
+}
+
+.hero .container .content p {
+    text-align: center;
+}
+
+@media screen and (max-width: 23em) {
+    .hero .container .content p {
+        margin-block: var(--fourth-margin) var(--third-margin);
+    }
+}
+
+.hero .container .content .buttons-container {
+    display: flex;
+    align-items: center;
+    gap: var(--fourth-gap);
+}
+
+.hero .container .content .buttons-container {
+    justify-content: center;
+}
