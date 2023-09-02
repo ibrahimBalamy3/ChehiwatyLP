@@ -150,6 +150,10 @@ a {
   background-color: #E30000;
 }
 
+body{
+  background-color: var(--lightest-color);
+}
+
 body,
 a,
 button, 
