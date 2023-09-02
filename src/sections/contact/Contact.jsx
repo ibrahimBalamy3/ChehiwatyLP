@@ -1,53 +1,48 @@
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Container from "../../components/container/Container"
 import "./Contact.css"
+import { motion } from "framer-motion"
+import { PrimaryTitlesVariant, PrimaryVariant } from "../../animations"
 
 export const Contact = () => {
   const [contactFormData, setContactFormData] = useState({
     name: "",
-    email : null,
-    message: null
-})
+    email: "",
+    message: ""
+  })
 
-  const [formIsValid, setFormIsValid] = useState(false)
-  const emailRe = /\w{1,}@\w{1,}\.\w{2,}/i;
-  
-  const handleFormSubmit= (event)=> {
-    event.preventDefault()
-
-      if(emailRe.test(contactFormData.email)) {
-        setFormIsValid(prevState => {
-          return {
-            ...prevState,
-            email: true,
-          }
-        })
-      }else {
-        alert('you email is not valid')
-      }
-
-
-    if(formIsValid) {
-      alert("the contact form is not valid")
-    }else {
-      alert("your message / comments send by succes")
-      console.log(contactFormData)
-    }
-  }
-
-  const handleInput = (event)=> {
+  const handleInput = (e)=> {
     setContactFormData(prevData => {
       return {
-          ...prevData,
-          [`${event.target.name}`] : event.target.value
+        ...prevData,
+        [e.target.name]: e.target.value,
       }
     })
   }
 
+  const handleFormSubmit= (e)=> {
+    e.preventDefault()
+    console.log(contactFormData)
+    alert("Thankyou , \n Your message was send succesfully")
+  }
+  
+
+
   return (
-    <section className="contact" id="contact">
+    <motion.section 
+      variants={PrimaryVariant} 
+      initial={'initial'} 
+      whileInView={'view'}  
+      className="contact" 
+      id="contact us"
+    >
         <Container>
-            <h2 className="primary styled">contact us</h2>
+            <motion.h2 
+              variants={PrimaryTitlesVariant} 
+              initial={'initial'} 
+              whileInView={'view'} 
+              className="primary styled"
+            >contact us</motion.h2>
             <form action="" method="post" onSubmit={(event)=> handleFormSubmit(event)}>
                 <div className="inputs">
                     <input 
@@ -72,7 +67,7 @@ export const Contact = () => {
                 <button className="primary">send</button>
             </form>
         </Container>
-    </section>
+    </motion.section>
   )
 }
 

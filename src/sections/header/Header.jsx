@@ -2,6 +2,8 @@ import { useRef, useState } from "react"
 import Container from "../../components/container/Container"
 import List from "../../components/list/List";
 import "./Header.css"
+import { motion } from "framer-motion";
+import { HeaderVariant } from "../../animations";
 
 export const Header = () => {
     const [isActive, setIsActive] = useState(false);
@@ -12,7 +14,12 @@ export const Header = () => {
     const handleClick= ()=> setIsActive(prevState => !prevState);
     
   return (
-    <header className="header">
+    <motion.header 
+        variants={HeaderVariant} 
+        initial={'initial'} 
+        animate={'animate'} 
+        className="header"
+    >
         <Container>
             <h1>
                 <a href="#home">chehiwaty</a>
@@ -26,7 +33,7 @@ export const Header = () => {
                 </div>
             </nav>
         </Container>
-    </header>
+    </motion.header>
   )
 }
 

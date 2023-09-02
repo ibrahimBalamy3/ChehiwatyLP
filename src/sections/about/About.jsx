@@ -1,12 +1,24 @@
 import Container from "../../components/container/Container"
 import Img from "../../assets/images/image1.webp"
 import "./About.css"
+import { motion } from "framer-motion"
+import { PrimaryTitlesVariant, PrimaryVariant } from "../../animations"
 
 export const About = () => {
   return (
-    <section className="about">
+    <motion.section 
+        variants={PrimaryVariant} 
+        initial={'initial'} 
+        whileInView={'view'} 
+        className="about"
+    >
         <Container>
-            <h2 className="primary styled">about us</h2>
+            <motion.h2 
+                variants={PrimaryTitlesVariant} 
+                initial={'initial'} 
+                whileInView={'view'} 
+                className="primary styled"
+            >about us</motion.h2>
             <div className="content">
                 <div className="img-container">
                     <img src={Img} alt="" />
@@ -19,7 +31,7 @@ export const About = () => {
                 </div>
             </div>
         </Container>
-    </section>
+    </motion.section>
   )
 }
 

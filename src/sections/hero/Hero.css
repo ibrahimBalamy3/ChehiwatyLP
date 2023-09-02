@@ -2,6 +2,8 @@
     width: 100%;
     min-height: calc(90vh - var(--header-height));
     padding-block: 0;
+    position: relative;
+    z-index: -1;
 }
 
 @media screen and (max-width: 30em) {

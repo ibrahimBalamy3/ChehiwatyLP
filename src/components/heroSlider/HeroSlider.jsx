@@ -2,6 +2,8 @@ import { useRef, useState } from "react"
 import { AiOutlineArrowLeft, AiOutlineArrowRight } from "react-icons/ai";
 import Data from "../../data/Data";
 import "./HeroSlider.css"
+import { motion } from "framer-motion";
+import { HeroSilderVariant } from "../../animations";
 
 
 export const HeroSlider = () => {
@@ -31,7 +33,12 @@ export const HeroSlider = () => {
 
 
   return (
-    <div className="slider">
+    <motion.div 
+        variants={HeroSilderVariant} 
+        initial={'initial'} 
+        whileInView={'view'} 
+        className="slider"
+    >
         <div className="img-container">
             <img src={imageArr.current[counter]} alt="image" />
             <div 
@@ -45,7 +52,7 @@ export const HeroSlider = () => {
                 <AiOutlineArrowLeft />
             </div>
         </div>
-   </div>
+   </motion.div>
   )
 }
 

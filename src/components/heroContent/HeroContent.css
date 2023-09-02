@@ -25,3 +25,7 @@
 .hero .container .content .buttons-container {
     justify-content: center;
 }
+
+.content .primary {
+    /* transition: 0.3s linear; */
+}

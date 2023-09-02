@@ -5,6 +5,8 @@ import "./Menu.css"
 import Card from "../../components/card/Card";
 import Data from "../../data/Data";
 import { useState } from "react";
+import { motion } from "framer-motion";
+import { PrimaryTitlesVariant, PrimaryVariant, SwipVariant } from "../../animations";
 
 export const Menu = () => {
     const data = Data.menuData
@@ -32,12 +34,20 @@ export const Menu = () => {
         return <Card key={index} image={ele.image} title={ele.title} price={ele.price} rate={ele.rate} />
     })
 
-
-console.log(isFocused)
   return (
-    <section className="menu">
+    <motion.section 
+        variants={PrimaryVariant} 
+        initial={'initial'} 
+        whileInView={'view'} 
+        className="menu"
+    >
         <Container>
-            <h2 className="primary styled">menu</h2>
+            <motion.h2 
+                variants={PrimaryTitlesVariant} 
+                initial={'initial'} 
+                whileInView={'view'} 
+                className="primary styled"
+            >menu</motion.h2>
             <p>
                 Delve into an Enchanting Moroccan CulinaryHaven Where 
                 Unparalleled Quality Harmonizes with Exquisite Taste
@@ -71,9 +81,13 @@ console.log(isFocused)
                 </ul>
                 <div className="content">{cards}</div>
             </div>
-            <div className="indication">swipe for more <BsArrowRight  className="left-arrow-icon"/></div>
+            <motion.div 
+                variants={SwipVariant} 
+                animate={'animate'} 
+                className="indication"
+            >swipe for more <BsArrowRight  className="left-arrow-icon"/></motion.div>
         </Container>
-    </section> 
+    </motion.section> 
   )
 }
 

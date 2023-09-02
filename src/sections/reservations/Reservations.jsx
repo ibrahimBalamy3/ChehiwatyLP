@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import Container from "../../components/container/Container"
 import "./Reservations.css"
+import { motion } from "framer-motion"
+import { PrimaryTitlesVariant, PrimaryVariant } from "../../animations"
 
 export const Reservations = () => {
     const [reservationFormData, setReservationFormData] = useState({
@@ -64,9 +66,19 @@ export const Reservations = () => {
     }, [reservationFormData])
 
   return (
-    <section className="reservations" id="reservations">
+    <motion.section 
+        variants={PrimaryVariant} 
+        initial={'initial'} 
+        whileInView={'view'} 
+        className="reservations" id="reservations"
+    >
         <Container>
-            <h2 className="primary styled">reservations</h2>
+            <motion.h2 
+                variants={PrimaryTitlesVariant} 
+                initial={'initial'} 
+                whileInView={'view'} 
+                className="primary styled"
+            >reservations</motion.h2>
             <form action="" method="post" onSubmit={(event)=> handleFormSubmit(event)}>
                 <div>
                     <input 
@@ -115,7 +127,7 @@ export const Reservations = () => {
                 <button type="submit">reserve</button>
             </form>
         </Container>
-    </section>
+    </motion.section>
   )
 }
 
